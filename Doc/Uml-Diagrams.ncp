@@ -1,0 +1,156 @@
+<Project>
+  <Name>FeWo_Manager</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.ClassDiagram" assembly="NClass.DiagramEditor, Version=2.8.0.1, Culture=neutral, PublicKeyToken=null">
+    <Name>FeWo_Core</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Package">
+        <Name>FeWo_Verwaltung_Core</Name>
+        <Location left="613" top="927" />
+        <Size width="2816" height="1826" />
+      </Entity>
+      <Entity type="Class">
+        <Name>CryptoProvider</Name>
+        <Access>Public</Access>
+        <Location left="647" top="1010" />
+        <Size width="216" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">readonly string _encryptionKey</Member>
+        <Member type="Method">public static string EncryptPin(string password)</Member>
+        <Member type="Method">public static string DecryptPin(string password)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>User</Name>
+        <Access>Public</Access>
+        <Location left="1009" top="1010" />
+        <Size width="216" height="261" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">protected string _Password</Member>
+        <Member type="Property">public string Vorname { get; set; }</Member>
+        <Member type="Property">public string Nachname { get; set; }</Member>
+        <Member type="Property">public string Email { get; set; }</Member>
+        <Member type="Property">public string Ort { get; set; }</Member>
+        <Member type="Property">public int Plz { get; set; }</Member>
+        <Member type="Property">public string Strasse { get; set; }</Member>
+        <Member type="Property">public int Hausnummer { get; set; }</Member>
+        <Member type="Property">public string Password { get; set; }</Member>
+        <Member type="Constructor">protected User(string vorname, string nachname, string email)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Mieter</Name>
+        <Access>Public</Access>
+        <Location left="647" top="1343" />
+        <Size width="376" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Vermieter</Name>
+        <Access>Public</Access>
+        <Location left="1073" top="1343" />
+        <Size width="374" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;MietWohnung&gt; MietWohnungsList = new List&lt;MietWohnung&gt;()</Member>
+        <Member type="Method">public void AddMietwohnung(MietWohnung m)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IDatenVerwalter</Name>
+        <Access>Public</Access>
+        <Location left="647" top="2455" />
+        <Size width="376" height="259" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void AddMietWohnungToDataSource(MietWohnung w)</Member>
+        <Member type="Method">void AddUserToDataSource(User u)</Member>
+        <Member type="Method">void RemoveMietWohnungFromDataSource(MietWohnung w)</Member>
+        <Member type="Method">MietWohnung GetMietWohnungFromDataSource()</Member>
+        <Member type="Method">User GetUserFromDataSource()</Member>
+        <Member type="Method">MietWohnung GetMietWohnungFromDataSource(string searchparm)</Member>
+        <Member type="Method">User GetUserFromDataSource(string searchparm)</Member>
+        <Member type="Method">void UpdateMietWohnungFromDataSource(MietWohnung m)</Member>
+        <Member type="Method">void UpdateUserFromDataSource(User u)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>EfDataSource</Name>
+        <Access>Public</Access>
+        <Location left="1174" top="2455" />
+        <Size width="341" height="259" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MietWohnung</Name>
+        <Access>Public</Access>
+        <Location left="1415" top="1010" />
+        <Size width="651" height="261" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public string Name { get; set; }</Member>
+        <Member type="Property">public string Beschreibung { get; set; }</Member>
+        <Member type="Property">public string Ort { get; set; }</Member>
+        <Member type="Property">public string Strasse { get; set; }</Member>
+        <Member type="Property">public int Plz { get; set; }</Member>
+        <Member type="Property">public int Hausnummer { get; set; }</Member>
+        <Member type="Property">public Vermierter Vermierter { get; }</Member>
+        <Member type="Constructor">public MietWohnung(string name, string beschreibung, string ort, string strasse, int plz, int hausnummer, Vermierter vermierter)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SearchingParmeterMietwohnung</Name>
+        <Access>Public</Access>
+        <Location left="647" top="1687" />
+        <Size width="357" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public string Name { get; }</Member>
+        <Member type="Property">public string Beschreibung { get; }</Member>
+        <Member type="Property">public string Ort { get; }</Member>
+        <Member type="Constructor">public SearchingParmeterMietwohnung(string name, string beschreibung, string ort)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SearchingParmeterUser</Name>
+        <Access>Public</Access>
+        <Location left="1073" top="1687" />
+        <Size width="669" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public string Vorname { get; }</Member>
+        <Member type="Property">public string Nachname { get; }</Member>
+        <Member type="Property">public string Email { get; }</Member>
+        <Member type="Property">public string Ort { get; }</Member>
+        <Member type="Property">public int Plz { get; }</Member>
+        <Member type="Property">public string Strasse { get; }</Member>
+        <Member type="Property">public int Hausnummer { get; }</Member>
+        <Member type="Constructor">public SearchingParmeterUser(string vorname = null, string nachname = null, string email = null, string ort = null, int plz = default, string strasse = null, int hausnummer = default)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Containers>
+      <Container entityIndex="0">
+        <ChildEntity>1</ChildEntity>
+        <ChildEntity>2</ChildEntity>
+        <ChildEntity>4</ChildEntity>
+        <ChildEntity>3</ChildEntity>
+        <ChildEntity>5</ChildEntity>
+        <ChildEntity>6</ChildEntity>
+        <ChildEntity>7</ChildEntity>
+        <ChildEntity>8</ChildEntity>
+        <ChildEntity>9</ChildEntity>
+      </Container>
+    </Containers>
+    <Relationships>
+      <Relationship type="Generalization" first="3" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="4" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="6" second="5">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
