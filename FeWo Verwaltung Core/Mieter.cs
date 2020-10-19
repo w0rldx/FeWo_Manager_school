@@ -12,7 +12,9 @@ namespace FeWo_Verwaltung_Core
 
         public void MieteMietWohnung(MietWohnung m, DateTime ankunft, DateTime abreise)
         {
-            m.AddNewMietzeitraum(new Vermietet(ankunft, abreise, this));
+            Vermietet v = new Vermietet(ankunft, abreise);
+            v.SetMieter(this);
+            m.AddNewMietzeitraum(v);
         }
     }
 }

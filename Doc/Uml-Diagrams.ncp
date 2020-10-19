@@ -6,13 +6,13 @@
     <Entities>
       <Entity type="Package">
         <Name>FeWo_Verwaltung_Core</Name>
-        <Location left="10" top="56" />
-        <Size width="2816" height="1839" />
+        <Location left="79" top="347" />
+        <Size width="1515" height="1507" />
       </Entity>
       <Entity type="Class">
         <Name>CryptoProvider</Name>
         <Access>Public</Access>
-        <Location left="44" top="139" />
+        <Location left="114" top="429" />
         <Size width="216" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">readonly string _encryptionKey</Member>
@@ -23,7 +23,7 @@
       <Entity type="Class">
         <Name>User</Name>
         <Access>Public</Access>
-        <Location left="406" top="139" />
+        <Location left="476" top="429" />
         <Size width="216" height="261" />
         <Collapsed>False</Collapsed>
         <Member type="Field">protected string _Password</Member>
@@ -41,7 +41,7 @@
       <Entity type="Class">
         <Name>Mieter</Name>
         <Access>Public</Access>
-        <Location left="44" top="472" />
+        <Location left="114" top="762" />
         <Size width="376" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private List&lt;MietWohnung&gt; _GemieteteObjekte = new List&lt;MietWohnung&gt;()</Member>
@@ -51,7 +51,7 @@
       <Entity type="Class">
         <Name>Vermieter</Name>
         <Access>Public</Access>
-        <Location left="470" top="472" />
+        <Location left="540" top="762" />
         <Size width="374" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private List&lt;MietWohnung&gt; MietWohnungsList = new List&lt;MietWohnung&gt;()</Member>
@@ -61,7 +61,7 @@
       <Entity type="Interface">
         <Name>IDatenVerwalter</Name>
         <Access>Public</Access>
-        <Location left="44" top="1132" />
+        <Location left="114" top="1422" />
         <Size width="376" height="259" />
         <Collapsed>False</Collapsed>
         <Member type="Method">void AddMietWohnungToDataSource(MietWohnung w)</Member>
@@ -77,7 +77,7 @@
       <Entity type="Class">
         <Name>EfDataSource</Name>
         <Access>Public</Access>
-        <Location left="470" top="1132" />
+        <Location left="540" top="1422" />
         <Size width="341" height="259" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -85,17 +85,17 @@
       <Entity type="Class">
         <Name>MietWohnung</Name>
         <Access>Public</Access>
-        <Location left="812" top="139" />
+        <Location left="882" top="429" />
         <Size width="651" height="261" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">private List&lt;Vermietet&gt; _Mietliste = new List&lt;Vermietet&gt;()</Member>
         <Member type="Property">public string Name { get; set; }</Member>
         <Member type="Property">public string Beschreibung { get; set; }</Member>
-        <Member type="Property">public string Ort { get; set; }</Member>
-        <Member type="Property">public string Strasse { get; set; }</Member>
-        <Member type="Property">public int Plz { get; set; }</Member>
-        <Member type="Property">public int Hausnummer { get; set; }</Member>
-        <Member type="Property">public Vermierter Vermierter { get; }</Member>
+        <Member type="Property">public string Ort { get; private set; }</Member>
+        <Member type="Property">public string Strasse { get; private set; }</Member>
+        <Member type="Property">public int Plz { get; private set; }</Member>
+        <Member type="Property">public int Hausnummer { get; private set; }</Member>
+        <Member type="Property">public Vermierter Vermierter { get; private set; }</Member>
+        <Member type="Property">public List&lt;Vermietet&gt; Mietliste { get; set; }</Member>
         <Member type="Constructor">public MietWohnung(string name, string beschreibung, string ort, string strasse, int plz, int hausnummer, Vermierter vermierter)</Member>
         <Member type="Method">public bool AddNewMietzeitraum(Vermietet v)</Member>
         <Modifier>None</Modifier>
@@ -103,7 +103,7 @@
       <Entity type="Class">
         <Name>SearchingParmeterMietwohnung</Name>
         <Access>Public</Access>
-        <Location left="44" top="816" />
+        <Location left="114" top="1106" />
         <Size width="357" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Property">public string Name { get; }</Member>
@@ -115,7 +115,7 @@
       <Entity type="Class">
         <Name>SearchingParmeterUser</Name>
         <Access>Public</Access>
-        <Location left="470" top="816" />
+        <Location left="540" top="1106" />
         <Size width="261" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Property">public string Vorname { get; }</Member>
@@ -131,7 +131,7 @@
       <Entity type="Class">
         <Name>Vermietet</Name>
         <Access>Public</Access>
-        <Location left="971" top="472" />
+        <Location left="1041" top="762" />
         <Size width="199" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Property">public DateTime Ankunft { get; }</Member>
@@ -143,7 +143,7 @@
       <Entity type="Class">
         <Name>Model</Name>
         <Access>Public</Access>
-        <Location left="2474" top="1604" />
+        <Location left="1123" top="1422" />
         <Size width="328" height="263" />
         <Collapsed>False</Collapsed>
         <Member type="Property">public DbSet&lt;User&gt; Users { get; set; }</Member>

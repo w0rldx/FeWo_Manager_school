@@ -2,6 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
+        <StartWorkingDirectory>$(MSBuildProjectDirectory)</StartWorkingDirectory>
         <RootNamespace>FeWo_Verwaltung_Core</RootNamespace>
     </PropertyGroup>
 

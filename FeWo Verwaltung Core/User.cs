@@ -5,7 +5,8 @@ namespace FeWo_Verwaltung_Core
     public abstract class User
     {
         protected string _Password;
-        
+
+        public int Id { get; set; }
         
         //Haupt-Variablen wird benötigt
         [Required] 
