@@ -6,13 +6,13 @@
     <Entities>
       <Entity type="Package">
         <Name>FeWo_Verwaltung_Core</Name>
-        <Location left="613" top="927" />
-        <Size width="2816" height="1826" />
+        <Location left="10" top="56" />
+        <Size width="2816" height="1839" />
       </Entity>
       <Entity type="Class">
         <Name>CryptoProvider</Name>
         <Access>Public</Access>
-        <Location left="647" top="1010" />
+        <Location left="44" top="139" />
         <Size width="216" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">readonly string _encryptionKey</Member>
@@ -23,7 +23,7 @@
       <Entity type="Class">
         <Name>User</Name>
         <Access>Public</Access>
-        <Location left="1009" top="1010" />
+        <Location left="406" top="139" />
         <Size width="216" height="261" />
         <Collapsed>False</Collapsed>
         <Member type="Field">protected string _Password</Member>
@@ -41,15 +41,17 @@
       <Entity type="Class">
         <Name>Mieter</Name>
         <Access>Public</Access>
-        <Location left="647" top="1343" />
+        <Location left="44" top="472" />
         <Size width="376" height="216" />
         <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;MietWohnung&gt; _GemieteteObjekte = new List&lt;MietWohnung&gt;()</Member>
+        <Member type="Method">public void MieteMietWohnung(MietWohnung m, DateTime ankunft, DateTime abreise)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Vermieter</Name>
         <Access>Public</Access>
-        <Location left="1073" top="1343" />
+        <Location left="470" top="472" />
         <Size width="374" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private List&lt;MietWohnung&gt; MietWohnungsList = new List&lt;MietWohnung&gt;()</Member>
@@ -59,7 +61,7 @@
       <Entity type="Interface">
         <Name>IDatenVerwalter</Name>
         <Access>Public</Access>
-        <Location left="647" top="2455" />
+        <Location left="44" top="1132" />
         <Size width="376" height="259" />
         <Collapsed>False</Collapsed>
         <Member type="Method">void AddMietWohnungToDataSource(MietWohnung w)</Member>
@@ -75,7 +77,7 @@
       <Entity type="Class">
         <Name>EfDataSource</Name>
         <Access>Public</Access>
-        <Location left="1174" top="2455" />
+        <Location left="470" top="1132" />
         <Size width="341" height="259" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -83,9 +85,10 @@
       <Entity type="Class">
         <Name>MietWohnung</Name>
         <Access>Public</Access>
-        <Location left="1415" top="1010" />
+        <Location left="812" top="139" />
         <Size width="651" height="261" />
         <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;Vermietet&gt; _Mietliste = new List&lt;Vermietet&gt;()</Member>
         <Member type="Property">public string Name { get; set; }</Member>
         <Member type="Property">public string Beschreibung { get; set; }</Member>
         <Member type="Property">public string Ort { get; set; }</Member>
@@ -94,12 +97,13 @@
         <Member type="Property">public int Hausnummer { get; set; }</Member>
         <Member type="Property">public Vermierter Vermierter { get; }</Member>
         <Member type="Constructor">public MietWohnung(string name, string beschreibung, string ort, string strasse, int plz, int hausnummer, Vermierter vermierter)</Member>
+        <Member type="Method">public bool AddNewMietzeitraum(Vermietet v)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>SearchingParmeterMietwohnung</Name>
         <Access>Public</Access>
-        <Location left="647" top="1687" />
+        <Location left="44" top="816" />
         <Size width="357" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Property">public string Name { get; }</Member>
@@ -111,8 +115,8 @@
       <Entity type="Class">
         <Name>SearchingParmeterUser</Name>
         <Access>Public</Access>
-        <Location left="1073" top="1687" />
-        <Size width="669" height="216" />
+        <Location left="470" top="816" />
+        <Size width="261" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Property">public string Vorname { get; }</Member>
         <Member type="Property">public string Nachname { get; }</Member>
@@ -122,6 +126,29 @@
         <Member type="Property">public string Strasse { get; }</Member>
         <Member type="Property">public int Hausnummer { get; }</Member>
         <Member type="Constructor">public SearchingParmeterUser(string vorname = null, string nachname = null, string email = null, string ort = null, int plz = default, string strasse = null, int hausnummer = default)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Vermietet</Name>
+        <Access>Public</Access>
+        <Location left="971" top="472" />
+        <Size width="199" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public DateTime Ankunft { get; }</Member>
+        <Member type="Property">public DateTime Abreise { get; }</Member>
+        <Member type="Property">public User Mieter { get; }</Member>
+        <Member type="Constructor">public Vermietet(DateTime ankunft, DateTime abreise, User mieter)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Model</Name>
+        <Access>Public</Access>
+        <Location left="2474" top="1604" />
+        <Size width="328" height="263" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public DbSet&lt;User&gt; Users { get; set; }</Member>
+        <Member type="Property">public DbSet&lt;MietWohnung&gt; MietWohnungen { get; set; }</Member>
+        <Member type="Method">protected override void OnConfiguring(DbContextOptionsBuilder options)</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
@@ -136,6 +163,9 @@
         <ChildEntity>7</ChildEntity>
         <ChildEntity>8</ChildEntity>
         <ChildEntity>9</ChildEntity>
+        <ChildEntity>10</ChildEntity>
+        <ChildEntity>-1</ChildEntity>
+        <ChildEntity>11</ChildEntity>
       </Container>
     </Containers>
     <Relationships>

@@ -15,9 +15,6 @@ namespace FeWo_Verwaltung_Core.Database
         
         
         //GET
-        MietWohnung GetMietWohnungFromDataSource();
-        User GetUserFromDataSource();
-        
         List<MietWohnung> GetMietWohnungFromDataSource(SearchingParmeterMietwohnung s);
         List<User> GetUserFromDataSource(SearchingParmeterUser s);
 

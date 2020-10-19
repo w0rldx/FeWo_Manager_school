@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Data.Common;
 using FeWo_Verwaltung_Core.Database;
+using FeWo_Verwaltung_Core.Database.DatenQuellen;
 
 namespace FeWo_Verwaltung_Core
 {
@@ -11,9 +13,13 @@ namespace FeWo_Verwaltung_Core
         {
         }
 
+        //TODO:Aktuell nicht unabänig von Datenquelle 19.10.2020 Author: W0rlD
         public void AddMietwohnung(MietWohnung m)
         {
-            
+            using (var ef = new EfDataSource())
+            {
+                ef.AddMietWohnungToDataSource(m);
+            }
         }
     }
 }

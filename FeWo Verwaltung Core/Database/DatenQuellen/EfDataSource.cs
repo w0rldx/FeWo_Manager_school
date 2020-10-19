@@ -1,9 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace FeWo_Verwaltung_Core.Database.DatenQuellen
 {
-    public class EfDataSource : IDatenVerwalter
+    public class EfDataSource : IDatenVerwalter, IDisposable
     {
         public void AddMietWohnungToDataSource(MietWohnung w)
         {
@@ -41,28 +42,6 @@ namespace FeWo_Verwaltung_Core.Database.DatenQuellen
             }
         }
 
-        public MietWohnung GetMietWohnungFromDataSource()
-        {
-            MietWohnung returnvalue;
-            using (var db = new VerwaltungContext())
-            {
-                returnvalue = db.MietWohnungen.FirstOrDefault();
-            }
-
-            return returnvalue;
-        }
-
-        public User GetUserFromDataSource()
-        {
-            User returnvalue;
-            using (var db = new VerwaltungContext())
-            {
-                returnvalue = db.Users.FirstOrDefault();
-            }
-
-            return returnvalue;
-        }
-
         public List<MietWohnung> GetMietWohnungFromDataSource(SearchingParmeterMietwohnung s)
         {
             List<MietWohnung> returnvalue;
@@ -83,7 +62,9 @@ namespace FeWo_Verwaltung_Core.Database.DatenQuellen
             using (var db = new VerwaltungContext())
             {
                 returnvalue = db.Users.Where(u => 
-                        u.Vorname == s.Vorname || u.Nachname == s.Nachname || u.Email == s.Email)
+                        u.Vorname == s.Vorname ||
+                        u.Nachname == s.Nachname ||
+                        u.Email == s.Email)
                     .ToList();
             }
 
@@ -129,5 +110,7 @@ namespace FeWo_Verwaltung_Core.Database.DatenQuellen
                 db.SaveChanges();
             }
         }
+
+        public void Dispose() { }
     }
 }
