@@ -1,8 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeWo Verwaltung WPF", "FeWo Verwaltung WPF\FeWo Verwaltung WPF.csproj", "{7FF85FE7-2D36-4EB6-BCC5-ED098812C7B6}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeWo Verwaltung Core", "FeWo Verwaltung Core\FeWo Verwaltung Core.csproj", "{54C50FBC-0F57-4012-AFE0-45AF1F9DFC43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeWo Verwaltung Core", "FeWo Verwaltung Core\FeWo Verwaltung Core.csproj", "{54C50FBC-0F57-4012-AFE0-45AF1F9DFC43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeWo Verwaltung WPF", "FeWo Verwaltung WPF\FeWo Verwaltung WPF.csproj", "{61004B27-18F8-4D9F-A8E6-80B093EA4591}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,13 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7FF85FE7-2D36-4EB6-BCC5-ED098812C7B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7FF85FE7-2D36-4EB6-BCC5-ED098812C7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7FF85FE7-2D36-4EB6-BCC5-ED098812C7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7FF85FE7-2D36-4EB6-BCC5-ED098812C7B6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{54C50FBC-0F57-4012-AFE0-45AF1F9DFC43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{54C50FBC-0F57-4012-AFE0-45AF1F9DFC43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54C50FBC-0F57-4012-AFE0-45AF1F9DFC43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54C50FBC-0F57-4012-AFE0-45AF1F9DFC43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61004B27-18F8-4D9F-A8E6-80B093EA4591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61004B27-18F8-4D9F-A8E6-80B093EA4591}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61004B27-18F8-4D9F-A8E6-80B093EA4591}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61004B27-18F8-4D9F-A8E6-80B093EA4591}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {035096DC-7C77-4F90-BE5C-CA3A87D52611}
 	EndGlobalSection
 EndGlobal

@@ -1,14 +1,14 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
-    <PropertyGroup>
-        <OutputType>WinExe</OutputType>
-        <TargetFramework>netcoreapp3.1-windows</TargetFramework>
-        <RootNamespace>FeWo_Verwaltung_WPF</RootNamespace>
-        <UseWPF>true</UseWPF>
-    </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>FeWo_Verwaltung_WPF</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\FeWo Verwaltung Core\FeWo Verwaltung Core.csproj" />
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FeWo Verwaltung Core\FeWo Verwaltung Core.csproj" />
+  </ItemGroup>
 
 </Project>
